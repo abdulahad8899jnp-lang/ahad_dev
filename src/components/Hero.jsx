@@ -257,218 +257,265 @@ export default function Hero() {
             </button>
           </div>
 
-         <div className="flex gap-5 text-xl text-gray-400">
-  <FaGithub className="hover:text-white hover:-translate-y-1 transition-all duration-300 cursor-pointer" />
-  <FaLinkedin className="hover:text-cyan-300 hover:-translate-y-1 transition-all duration-300 cursor-pointer" />
-  <FaInstagram className="hover:text-pink-400 hover:-translate-y-1 transition-all duration-300 cursor-pointer" />
+        <div className="flex items-center gap-5">
+
+  <motion.a
+    href="https://github.com/abdulahad8899jnp-lang"
+    target="_blank"
+    rel="noopener noreferrer"
+    whileHover={{ y: -8, scale: 1.1 }}
+    whileTap={{ scale: 0.95 }}
+    className="
+      w-14 h-14
+      flex items-center justify-center
+      rounded-2xl
+      bg-white/5
+      backdrop-blur-xl
+      border border-white/10
+      text-gray-400 text-2xl
+      hover:text-white
+      hover:border-white/30
+      hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]
+      transition-all duration-300
+    "
+  >
+    <FaGithub />
+  </motion.a>
+
+  <motion.a
+    href="https://www.linkedin.com/in/abdul-ahad-8299152b6?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+    target="_blank"
+    rel="noopener noreferrer"
+    whileHover={{ y: -8, scale: 1.1 }}
+    whileTap={{ scale: 0.95 }}
+    className="
+      w-14 h-14
+      flex items-center justify-center
+      rounded-2xl
+      bg-white/5
+      backdrop-blur-xl
+      border border-white/10
+      text-gray-400 text-2xl
+      hover:text-cyan-400
+      hover:border-cyan-400/30
+      hover:shadow-[0_0_30px_rgba(34,211,238,0.3)]
+      transition-all duration-300
+    "
+  >
+    <FaLinkedin />
+  </motion.a>
+
+  <motion.a
+    href="https://www.instagram.com/abdulahad8899jnp?igsh=MXNzM3M2MDU3bDB4Zw==&utm_source=ig_contact_invite"
+    target="_blank"
+    rel="noopener noreferrer"
+    whileHover={{ y: -8, scale: 1.1 }}
+    whileTap={{ scale: 0.95 }}
+    className="
+      w-14 h-14
+      flex items-center justify-center
+      rounded-2xl
+      bg-white/5
+      backdrop-blur-xl
+      border border-white/10
+      text-gray-400 text-2xl
+      hover:text-pink-400
+      hover:border-pink-400/30
+      hover:shadow-[0_0_30px_rgba(236,72,153,0.3)]
+      transition-all duration-300
+    "
+  >
+    <FaInstagram />
+  </motion.a>
+
 </div>
         </motion.div>
 
         {/* RIGHT SIDE */}
-   <div className="flex justify-center relative items-center">
+   <div className="relative flex justify-center items-center min-h-[650px] w-full">
 
-  {/* BIG GLOW */}
-  <div className="absolute w-[420px] h-[420px] bg-gradient-to-r from-cyan-500/30 to-purple-500/30 rounded-full blur-[120px] animate-pulse" />
+  {/* BIG AURORA GLOW */}
+  <div className="absolute w-[550px] h-[550px] bg-cyan-500/15 rounded-full blur-[180px]" />
+  <div className="absolute w-[450px] h-[450px] bg-purple-500/15 rounded-full blur-[180px]" />
 
-  {/* OUTER ROTATING RING */}
+  {/* OUTER RING */}
   <motion.div
     animate={{ rotate: 360 }}
+    transition={{
+      duration: 30,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+    className="absolute w-[420px] h-[420px] rounded-full border border-cyan-400/20"
+  >
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-cyan-400 rounded-full shadow-[0_0_20px_#22d3ee]" />
+  </motion.div>
+
+  {/* MIDDLE RING */}
+  <motion.div
+    animate={{ rotate: -360 }}
     transition={{
       duration: 20,
       repeat: Infinity,
       ease: "linear",
     }}
-    className="
-    absolute
-    w-[340px]
-    h-[340px]
-    rounded-full
-    border-[3px]
-    border-cyan-400/30
-    border-t-cyan-400
-    "
+    className="absolute w-[360px] h-[360px] rounded-full border border-purple-500/20"
   />
 
-  {/* INNER ROTATING RING */}
+  {/* DASHED RING */}
   <motion.div
-    animate={{ rotate: -360 }}
+    animate={{ rotate: 360 }}
     transition={{
-      duration: 15,
+      duration: 50,
       repeat: Infinity,
       ease: "linear",
     }}
-    className="
-    absolute
-    w-[290px]
-    h-[290px]
-    rounded-full
-    border-[3px]
-    border-purple-500/20
-    border-b-purple-500
-    "
+    className="absolute w-[500px] h-[500px] rounded-full border border-dashed border-white/10"
   />
 
-  {/* FLOATING TECH BADGES */}
-  <motion.div
-    animate={{ y: [0, -12, 0] }}
-    transition={{ duration: 3, repeat: Infinity }}
-    className="
-    absolute
-    top-8
-    -left-6
-    z-30
-    px-4 py-2
-    rounded-xl
-    bg-[#0f172a]
-    border border-cyan-500/30
-    text-cyan-400
-    text-sm
-    "
-  >
-    ⚛ React
-  </motion.div>
-
-  <motion.div
-    animate={{ y: [0, 12, 0] }}
-    transition={{ duration: 4, repeat: Infinity }}
-    className="
-    absolute
-    top-20
-    -right-8
-    z-30
-    px-4 py-2
-    rounded-xl
-    bg-[#0f172a]
-    border border-purple-500/30
-    text-purple-400
-    text-sm
-    "
-  >
-    🔥 Firebase
-  </motion.div>
-
+  {/* TOP LEFT CARD */}
   <motion.div
     animate={{ y: [0, -10, 0] }}
-    transition={{ duration: 3.5, repeat: Infinity }}
+    transition={{ duration: 4, repeat: Infinity }}
     className="
-    absolute
-    bottom-20
-    -left-8
-    z-30
-    px-4 py-2
-    rounded-xl
-    bg-[#0f172a]
-    border border-cyan-500/30
-    text-cyan-400
-    text-sm
+      absolute
+      top-16
+      left-4
+      lg:left-8
+      z-30
+      hidden md:block
+      bg-white/5
+      backdrop-blur-xl
+      border border-cyan-500/20
+      rounded-2xl
+      px-5 py-3
     "
   >
-    🎨 Tailwind
+    <p className="text-xs text-gray-400">Frontend</p>
+    <h4 className="text-cyan-400 font-semibold">⚛ React.js</h4>
   </motion.div>
 
-  {/* IMAGE */}
+  {/* TOP RIGHT CARD */}
   <motion.div
-    animate={{
-      y: [0, -18, 0],
-    }}
+    animate={{ y: [0, 10, 0] }}
+    transition={{ duration: 5, repeat: Infinity }}
+    className="
+      absolute
+      top-20
+      right-4
+      lg:right-8
+      z-30
+      hidden md:block
+      bg-white/5
+      backdrop-blur-xl
+      border border-purple-500/20
+      rounded-2xl
+      px-5 py-3
+    "
+  >
+    <p className="text-xs text-gray-400">Backend</p>
+    <h4 className="text-purple-400 font-semibold">🔥 Firebase</h4>
+  </motion.div>
+
+  {/* PROFILE IMAGE */}
+  <motion.div
+    animate={{ y: [0, -15, 0] }}
     transition={{
-      duration: 5,
+      duration: 6,
       repeat: Infinity,
       ease: "easeInOut",
     }}
     whileHover={{
-      scale: 1.05,
+      scale: 1.04,
     }}
-    className="relative z-20 group"
+    className="relative z-20"
   >
-    <div
-      className="
-      relative
-      p-3
-      rounded-full
-      bg-white/5
-      backdrop-blur-xl
-      border
-      border-white/10
-      shadow-[0_0_50px_rgba(34,211,238,0.2)]
-      "
-    >
-      <img
-        src="/ahad1.png"
-        alt="profile"
-        className="
-        w-64 h-64
-        sm:w-80 sm:h-80
-        rounded-full
-        object-cover
-        border-4
-        border-white/20
-        "
-      />
+    <div className="p-[3px] rounded-full bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500">
+      <div className="p-3 rounded-full bg-[#050816]">
+        <img
+          src="/ahad1.png"
+          alt="profile"
+          className="
+            w-72
+            h-72
+            sm:w-80
+            sm:h-80
+            object-cover
+            rounded-full
+            shadow-[0_0_80px_rgba(34,211,238,0.35)]
+          "
+        />
+      </div>
     </div>
   </motion.div>
 
-  {/* EXPERIENCE CARD */}
+  {/* BOTTOM LEFT CARD */}
   <motion.div
-    initial={{ opacity: 0, x: 50 }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 1 }}
+    animate={{ y: [0, -10, 0] }}
+    transition={{ duration: 4, repeat: Infinity }}
     className="
-    absolute
-    right-[-20px]
-    top-1/2
-    -translate-y-1/2
-    z-30
-
-    bg-[#0f172a]/90
-    backdrop-blur-xl
-    border border-cyan-500/20
-
-    rounded-2xl
-    px-6 py-5
+      absolute
+      bottom-28
+      left-4
+      lg:left-8
+      z-30
+      hidden md:block
+      bg-white/5
+      backdrop-blur-xl
+      border border-cyan-500/20
+      rounded-2xl
+      px-5 py-3
     "
   >
-    <h3 className="text-4xl font-bold text-cyan-400">
-      1+
-    </h3>
+    <p className="text-xs text-gray-400">Styling</p>
+    <h4 className="text-cyan-400 font-semibold">🎨 Tailwind</h4>
+  </motion.div>
 
+  {/* BOTTOM RIGHT PROJECT CARD */}
+  <motion.div
+    animate={{ y: [0, 8, 0] }}
+    transition={{ duration: 4, repeat: Infinity }}
+    className="
+      absolute
+      bottom-24
+      right-4
+      lg:right-8
+      z-30
+      hidden md:block
+      bg-white/5
+      backdrop-blur-xl
+      border border-white/10
+      rounded-3xl
+      px-6 py-5
+    "
+  >
+    <h3 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+      15+
+    </h3>
     <p className="text-gray-400 text-sm">
-      Years Learning
-      <br />
-      & Building
+      Projects Completed
     </p>
   </motion.div>
 
-  {/* FLOAT TAG */}
+  {/* STATUS BADGE */}
   <motion.div
-    animate={{
-      y: [0, -8, 0],
-    }}
-    transition={{
-      duration: 2,
-      repeat: Infinity,
-    }}
+    animate={{ scale: [1, 1.05, 1] }}
+    transition={{ duration: 2, repeat: Infinity }}
     className="
-    absolute
-    -bottom-8
-    z-30
-
-    px-5 py-3
-    rounded-xl
-
-    bg-white/10
-    backdrop-blur-xl
-    border border-white/20
-
-    text-cyan-300
-    text-sm
-
-    shadow-lg
+      absolute
+      bottom-4
+      z-30
+      px-6 py-3
+      rounded-full
+      bg-green-500/10
+      border border-green-500/30
+      backdrop-blur-xl
     "
   >
-    ⚡ Building Future Web Apps
+    <span className="text-green-400 font-medium">
+      🟢 Available For Freelance
+    </span>
   </motion.div>
-
 </div>
       </div>
 

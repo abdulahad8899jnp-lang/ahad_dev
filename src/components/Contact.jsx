@@ -270,7 +270,7 @@ ${message}
   },
   {
     name: "Instagram",
-    link: "https://instagram.com/yourusername",
+    link: "https://www.instagram.com/abdulahad8899jnp?igsh=MXNzM3M2MDU3bDB4Zw==&utm_source=ig_contact_invite",
   },
  
 ].map((item, i) => (
